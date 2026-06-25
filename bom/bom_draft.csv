@@ -1,0 +1,47 @@
+Block,Function,Qty,MPN/Value,Package,LCSC,ExpectedType,Notes
+A,Microcontroller,1,ESP32-C6-WROOM-1,SMD module,TBD,Extended,1U variant compatible (U.FL antenna)
+A,USB-C connector,1,USB Type-C 16 pin,SMT,TBD,Basic/Extended,Charging + native USB Serial/JTAG
+A,CC pull-down,2,5.1k,0402/0603,TBD,Passive,On CC1/CC2 pins
+A,Buttons,2,tactile switch,SMD,TBD,Basic,EN (Reset) and GPIO9 (Boot)
+A,EN pull-up,1,10k,0402/0603,TBD,Passive,
+A,EN debounce cap,1,1uF,0402/0603,TBD,Passive,
+A,MCU decoupling,n,100nF + bulk,0402/various,TBD,Passive,Quantity from schematic
+B,Buck-boost charger,1,BQ25798RQMR,VQFN,TBD,Extended,MPPT + ADC + I2C 1-4S
+B,Power inductor,1,~1uH (datasheet),SMD power,TBD,Basic/Extended,Buck-boost high current
+B,Input ACFET/RBFET,4,N-ch low Rds_on,SOT-23/dual,TBD,Basic,2 pairs on VAC1 (USB) and VAC2 (solar)
+B,Solar connector,1,JST-PH 2.0mm,SMD/TH,TBD,Basic,Panel input
+B,Input/output caps,2,10uF (+ bulk),0805/various,TBD,Passive,VAC/VBUS and SYS/BAT
+B,Boot/REGN caps,2,datasheet,0402/0603,TBD,Passive,Switch bootstrap + REGN bypass
+B,Programming resistors,n,datasheet,0402,TBD,Passive,PROG/ILIM/I2C address
+B,Status LED,1,LED,0603,TBD,Passive,On STAT pin (status also via I2C)
+B,Status LED resistor,1,2.2k-4.7k,0402/0603,TBD,Passive,
+C,Battery socket,1,black plastic socket,SMT,TBD,Mechanical,18650 / 21700
+C,Negative pads,2,PCB copper,-,-,-,At 65mm and 70mm no BOM
+C,Protection controller,1,DW01A,SOT-23-6,TBD,Basic,Cell protection
+C,Protection MOSFET,1,FS8205A,SOT-23-6,TBD,Basic,Dual N-ch negative rail
+C,DW01A network resistor,1,100-470 ohm,0402/0603,TBD,Passive,
+C,DW01A network cap,1,0.1uF,0402/0603,TBD,Passive,
+C,Battery NTC,1,10k B3950,0402/0603,TBD,Basic,On TS pin in slot under cell
+C,TS bias network,n,datasheet,0402,TBD,Passive,TS pin bias
+C,LDO 3.3V,1,XC6220/ME6211,SOT-23-5,TBD,Basic/Extended,Microamp Iq fed from SYS
+C,LDO caps,2,10uF,0805,TBD,Passive,In/out
+D,Air sensor,1,BME280,LGA,TBD,Extended,Temp/humidity/pressure I2C
+D,Sensor cutoff MOSFET,1,AO3401,SOT-23,TBD,Basic,P-ch cuts sensor VCC in deep sleep
+D,I2C pull-up,2,4.7k,0402/0603,TBD,Passive,On switched sensor rail
+D,Expansion connectors,2,JST-SH 1.0mm 4p,SMD,TBD,Basic,VCC/GND/SCL/SDA Qwiic/STEMMA
+D,Dedicated ADC,1,ADS1115,MSOP-10,TBD,Extended,16-bit for moisture and EC
+D,Moisture oscillator,1,TLC555,SOIC/SOT,TBD,Basic/Extended,Square wave for capacitive (alt LEDC)
+D,Moisture rectifier diode,1,BAT54,SOT-23,TBD,Basic,Peak detector
+D,Moisture detector cap,1,tuning,0402/0603,TBD,Passive,
+D,Moisture series resistor,1,tuning,0402/0603,TBD,Passive,On capacitive plate
+D,EC electrodes,2,gold-fingers ENIG,PCB copper,-,-,Inert pads no BOM
+D,EC reference resistor,1,10k,0402/0603,TBD,Passive,Known divider for EC
+E,Boost 5V chip,1,SX1308/MT3608,SOT-23-6,TBD,Basic,Enabled via EN pin
+E,Boost inductor,1,4.7uH,SMD power,TBD,Basic,
+E,Boost diode,1,SS34,SMA,TBD,Basic,Step-up rectification
+E,Boost feedback resistors,2,datasheet,0402/0603,TBD,Passive,Set 5V output
+E,Boost filter caps,2,10-22uF,0805/1206,TBD,Passive,Clean 5V output
+E,Load MOSFETs,2,AO3400,SOT-23,TBD,Basic,N-ch up to 5A PWM
+E,Flyback diodes,2,SS34/1N5819,SMA,TBD,Basic,Anode to drain cathode to +5V
+E,Gate pull-down,2,10k,0402/0603,TBD,Passive,Loads off during reset
+E,Load outputs,2,JST-XH 2.54mm 2p,TH/SMD,TBD,Basic,Pump or LED strip relay

@@ -11,6 +11,20 @@ dei sensori.
 > hardware e la distinta base (BOM). Non e ancora un progetto finalizzato:
 > vedere la sezione "Domande aperte e rischi di progetto".
 
+## Struttura del repository
+
+```
+hardware/      progetto KiCad (schematico, PCB, librerie custom)
+bom/           distinta base di riferimento (md + csv)
+docs/          datasheet, immagini e workflow KiCad -> JLCPCB
+production/    output di fabbricazione generati (ignorati dal versioning)
+readme.md      questo documento
+LICENSE        CERN-OHL-S-2.0
+```
+
+Per il flusso di lavoro KiCad e l'ordine su JLCPCB vedi
+[docs/jlcpcb-kicad-workflow.md](docs/jlcpcb-kicad-workflow.md).
+
 ## Indice
 
 1. Introduzione e visione generale

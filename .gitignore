@@ -1,0 +1,39 @@
+# ---- KiCad ----
+# Autosave e backup
+_autosave-*
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*-save.kicad_sch
+*-save.kicad_pcb
+*.bak
+*~
+
+# Lock e cache (rigenerabili)
+*.lck
+~*.lck
+fp-info-cache
+
+# Rescue e netlist esportate
+*-rescue.kicad_sym
+*-rescue.lib
+*-rescue.dcm
+*.net
+
+# ---- Plugin kicad-jlcpcb-tools (database/cache locale, rigenerabile) ----
+**/jlcpcb/
+.jlcpcb/
+
+# ---- Output di fabbricazione (rigenerabili) ----
+# Gerber, drill, BOM/CPL esportati e zip per il fab.
+# Le release ufficiali vanno allegate alle GitHub Releases o committate a mano.
+production/*
+!production/README.md
+*.gbr
+*.gbrjob
+*.drl
+*.zip
+
+# ---- Sistema operativo ----
+Thumbs.db
+.DS_Store
