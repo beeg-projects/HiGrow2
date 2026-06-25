@@ -29,13 +29,15 @@ D,Air sensor,1,BME280,LGA,TBD,Extended,Temp/humidity/pressure I2C
 D,Sensor cutoff MOSFET,1,AO3401,SOT-23,TBD,Basic,P-ch cuts sensor VCC in deep sleep
 D,I2C pull-up,2,4.7k,0402/0603,TBD,Passive,On switched sensor rail
 D,Expansion connectors,2,JST-SH 1.0mm 4p,SMD,TBD,Basic,VCC/GND/SCL/SDA Qwiic/STEMMA
-D,Dedicated ADC,1,ADS1115,MSOP-10,TBD,Extended,16-bit for moisture and EC
+D,Dedicated ADC,1,ADS1115,MSOP-10,TBD,Extended,16-bit for moisture EC and soil NTC
 D,Moisture oscillator,1,TLC555,SOIC/SOT,TBD,Basic/Extended,Square wave for capacitive (alt LEDC)
 D,Moisture rectifier diode,1,BAT54,SOT-23,TBD,Basic,Peak detector
 D,Moisture detector cap,1,tuning,0402/0603,TBD,Passive,
 D,Moisture series resistor,1,tuning,0402/0603,TBD,Passive,On capacitive plate
 D,EC electrodes,2,gold-fingers ENIG,PCB copper,-,-,Inert pads no BOM
 D,EC reference resistor,1,10k,0402/0603,TBD,Passive,Known divider for EC
+D,Soil temperature NTC,1,10k B3950,0402/0603,TBD,Basic,On buried tip under coating isolate with slots
+D,Soil NTC reference resistor,1,10k 1%,0402/0603,TBD,Passive,Divider on electronics side read via ADS1115
 E,Boost 5V chip,1,SX1308/MT3608,SOT-23-6,TBD,Basic,Enabled via EN pin
 E,Boost inductor,1,4.7uH,SMD power,TBD,Basic,
 E,Boost diode,1,SS34,SMA,TBD,Basic,Step-up rectification

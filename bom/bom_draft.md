@@ -58,13 +58,15 @@ P = passivo jellybean (quasi sempre Basic), - = non assemblato / meccanico.
 | MOSFET taglio sensori | 1 | AO3401 | SOT-23 | TBD | B | P-ch, scollega VCC sensori in deep sleep. |
 | R pull-up I2C | 2 | 4.7k | 0402/0603 | TBD | P | Sul rail commutato dei sensori. |
 | Connettori espansione | 2 | JST-SH 1.0mm 4p | SMD | TBD | B | VCC/GND/SCL/SDA (Qwiic/STEMMA). |
-| ADC dedicato | 1 | ADS1115 | MSOP-10 | TBD | E | 16 bit, per umidita ed EC. |
+| ADC dedicato | 1 | ADS1115 | MSOP-10 | TBD | E | 16 bit, per umidita, EC e NTC suolo. |
 | Oscillatore umidita | 1 | TLC555 | SOIC/SOT | TBD | B/E | Onda quadra per il capacitivo (alt: LEDC). |
 | Diodo raddrizz. umidita | 1 | BAT54 | SOT-23 | TBD | B | Rilevatore di picco. |
 | C rilevatore umidita | 1 | da taratura | 0402/0603 | TBD | P | |
 | R serie umidita | 1 | da taratura | 0402/0603 | TBD | P | Sulla piastra capacitiva. |
 | Elettrodi EC | 2 | gold-fingers ENIG | rame PCB | - | - | Pad inerti, no BOM. |
 | R riferimento EC | 1 | 10k | 0402/0603 | TBD | P | Partitore noto per EC. |
+| NTC temperatura suolo | 1 | 10k B3950 | 0402/0603 | TBD | B | Sulla punta interrata, sotto coating. Isolare con slot. |
+| R riferimento NTC suolo | 1 | 10k 1% | 0402/0603 | TBD | P | Partitore lato elettronica, letto su canale ADS1115. |
 
 ## E. Automazione attiva (pompe e luci) e step-up
 

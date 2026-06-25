@@ -203,10 +203,27 @@ mesi all'aperto, una protezione di cella indipendente e obbligatoria.
   * misura sincrona, campionando l'ADC a meta di ciascun semiperiodo;
   * compensazione in temperatura: la conducibilita varia di circa 2%/C,
     quindi le letture vanno normalizzate a 25 C usando la temperatura del
-    terreno o dell'aria;
+    suolo misurata dall'NTC dedicato (vedi sotto);
   * calibrazione a due punti con soluzioni a conducibilita nota;
   * elettrodi inerti (oro su nichel) per limitare ossidazione e fouling, che
     restano comunque voci di manutenzione periodica.
+* **Temperatura del suolo (senza sonde esterne):** misurata montando un NTC
+  (10k B3950, lo stesso tipo di quello batteria) sulla parte interrata del
+  picchetto, sotto il conformal coating: la PCB stessa fa da sonda, non serve
+  alcun componente libero nel terreno. La scelta dell'NTC rispetto a un sensore
+  digitale e dettata dalla dimensione sul picchetto stretto: nella zona
+  interrata finisce un solo passivo 0402 con due piste, contro un IC alimentato
+  (minimo circa 1.5x1.5mm) con quattro piste e alimentazione nella zona umida.
+  L'accuratezza, con calibrazione a due punti sull'ADS1115, e ampiamente
+  sufficiente per il suolo. Accorgimenti di layout:
+  * NTC vicino alla punta, nella zona di terreno;
+  * slot/fresate nel PCB tra la sezione elettronica e la punta, come freno
+    termico: il calore di batteria, LDO e MCU non deve scendere lungo il rame
+    e falsare la lettura verso l'alto;
+  * corrente di misura piccola o impulsata per evitare auto-riscaldamento.
+  In alternativa, se la larghezza del picchetto lo consente, un sensore
+  digitale piccolo (es. STS40, DFN 1.5x1.5mm, I2C) offre precisione calibrata
+  di fabbrica al prezzo di piu componenti e piste nella zona interrata.
 * **Dati ambientali:** sensore **BME280** integrato per temperatura, umidita
   dell'aria e pressione atmosferica, su bus I2C. Sostituisce i vecchi e
   inaffidabili DHT11.
@@ -218,7 +235,7 @@ mesi all'aperto, una protezione di cella indipendente e obbligatoria.
   rumoroso e non lineare, e l'ADC del BQ25798 e dedicato ai rail di potenza
   (VBAT, VBUS, correnti). Per i segnali analogici delle piante si usa quindi un
   convertitore **ADS1115** dedicato (16 bit, 4 canali, I2C) su umidita del
-  terreno ed EC, per letture stabili e ripetibili. Va sul bus I2C condiviso,
+  terreno, EC e temperatura del suolo (NTC), per letture stabili e ripetibili. Va sul bus I2C condiviso,
   alimentato dal rail commutato dei sensori. La tensione di batteria non passa
   piu da qui: la legge il BQ25798 via I2C.
 * **Isolamento energetico:** per evitare assorbimenti in deep sleep,
@@ -344,6 +361,8 @@ Rilevamento delle metriche biologiche.
 | Resistenza serie umidita | 1 | (da taratura) | In serie alla piastra capacitiva, sull'eccitazione. |
 | Elettrodi EC | 2 | Gold-fingers (ENIG) | Pad inerti esposti, gestiti in pseudo-AC via GPIO. |
 | Resistenza riferimento EC | 1 | `10kOhm` | Partitore noto per la misura della conduttivita dal terreno. |
+| NTC temperatura suolo | 1 | `10kOhm` (B 3950) | Sulla punta interrata del picchetto, sotto coating. Isolare con slot. |
+| Resistenza riferimento NTC suolo | 1 | `10kOhm` (1%) | Partitore lato elettronica per la lettura dell'NTC suolo via ADS1115. |
 | ADC dedicato | 1 | `ADS1115` | 16 bit, 4 canali, I2C. Per umidita ed EC. Sul rail commutato dei sensori. |
 
 ### 3.5 Automazione attiva (pompe e luci) e step-up
