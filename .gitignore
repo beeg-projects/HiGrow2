@@ -9,6 +9,9 @@ _autosave-*
 *.bak
 *~
 
+# Preferenze locali del progetto (per-utente, rigenerate da KiCad)
+*.kicad_prl
+
 # Lock e cache (rigenerabili)
 *.lck
 ~*.lck

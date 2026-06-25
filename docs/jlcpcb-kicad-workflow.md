@@ -7,7 +7,9 @@ KiCad, cosi la BOM resta sempre allineata allo schematico.
 
 ## 1. Strumenti
 
-* **KiCad 8 o 9** (https://www.kicad.org).
+* **KiCad** (https://www.kicad.org). Il progetto e impostato e validato su
+  KiCad 10.0.x; apre anche con versioni precedenti (8/9) con migrazione del
+  formato.
 * **Plugin `kicad-jlcpcb-tools` (Bouni)**, installabile dal Plugin and Content
   Manager di KiCad (cerca "JLCPCB"). E lo strumento principale: mantiene un
   mirror locale del database parti assembly di JLCPCB e permette di:

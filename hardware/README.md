@@ -1,20 +1,22 @@
 # hardware
 
-Progetto KiCad della scheda HiGrow 2.0.
+Progetto KiCad della scheda HiGrow 2.0 (impostato su KiCad 10).
 
-Il progetto va creato qui dentro con nome `HiGrow2` (KiCad 8 o 9), in modo da
-ottenere:
+La base del progetto e gia presente: schematico e PCB **vuoti**, validati con
+`kicad-cli`, pronti da popolare.
 
 ```
 hardware/
-  HiGrow2.kicad_pro    # progetto
-  HiGrow2.kicad_sch    # schematico
-  HiGrow2.kicad_pcb    # layout PCB
-  HiGrow2.kicad_prl    # preferenze locali (puo essere ignorato dal versioning)
-  sym-lib-table        # tabelle librerie (se servono librerie locali)
+  HiGrow2.kicad_pro    # progetto (presente)
+  HiGrow2.kicad_sch    # schematico vuoto (presente)
+  HiGrow2.kicad_pcb    # PCB vuoto, 2 strati (presente)
+  HiGrow2.kicad_prl    # preferenze locali, generate da KiCad (non versionate)
+  sym-lib-table        # tabelle librerie locali (da aggiungere se servono)
   fp-lib-table
-  libs/                # eventuali simboli/footprint custom (es. picchetto, gold-fingers)
+  libs/                # simboli/footprint custom (es. picchetto, gold-fingers)
 ```
+
+Apri `HiGrow2.kicad_pro` con KiCad per iniziare lo schematico.
 
 Convenzioni:
 
