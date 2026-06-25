@@ -24,6 +24,7 @@ dei sensori.
 3. Distinta base (BOM) per macroblocchi
 4. Domande aperte e rischi di progetto
 5. Riferimenti e progetti open correlati
+6. Licenza
 
 ---
 
@@ -380,3 +381,33 @@ Infrastruttura di potenza on demand per i carichi ausiliari.
 * Datasheet: BQ25798 (charger buck-boost MPPT, I2C, reference design TI),
   DW01A + FS8205A (protezione cella), XC6220 / ME6211 (LDO),
   SX1308 / MT3608 (boost), ADS1115 (ADC).
+
+---
+
+## 6. Licenza
+
+L'hardware di questo progetto (schematici, PCB, file CAD) e rilasciato sotto
+**CERN Open Hardware Licence Version 2 - Strongly Reciprocal**
+(SPDX: `CERN-OHL-S-2.0`). Il testo completo e nel file [LICENSE](LICENSE) ed e
+disponibile anche su https://ohwr.org/cern_ohl_s_v2.txt
+
+E una licenza reciproca forte (copyleft): chi distribuisce il progetto o
+prodotti basati su di esso, anche modificati, deve rendere disponibili i
+relativi file sorgente di progetto alle stesse condizioni.
+
+Notice da apporre sui file di progetto:
+
+```
+Copyright (C) 2026 <titolare del copyright>
+
+This source describes Open Hardware and is licensed under the CERN-OHL-S v2.
+You may redistribute and modify this source and make products using it under
+the terms of the CERN-OHL-S v2 (https://ohwr.org/cern_ohl_s_v2.txt).
+This source is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING
+OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE.
+Please see the CERN-OHL-S v2 for applicable conditions.
+```
+
+> Nota: firmware e documentazione, quando aggiunti, potranno avere licenze
+> proprie e piu adatte (es. GPLv3 per il firmware, CC BY-SA-4.0 per la
+> documentazione).
