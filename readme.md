@@ -398,7 +398,7 @@ relativi file sorgente di progetto alle stesse condizioni.
 Notice da apporre sui file di progetto:
 
 ```
-Copyright (C) 2026 <titolare del copyright>
+Copyright (C) 2026 Gianluca De Rossi
 
 This source describes Open Hardware and is licensed under the CERN-OHL-S v2.
 You may redistribute and modify this source and make products using it under
